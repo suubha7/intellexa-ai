@@ -51,7 +51,7 @@ def vectorstore(chunks, metadata=None):
 def retrieve_context(query: str, vectorstore):
     """Search relevant chunks by the query."""
     try:
-        context = vectorstore.similarity_search(query, k=3)
+        context = vectorstore.similarity_search(query, k=4)
         
         return context
     except Exception as e:

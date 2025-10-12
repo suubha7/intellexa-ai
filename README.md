@@ -1,7 +1,10 @@
-# 🚀 Intellexa AI - Enterprise 
+# 🚀 Intellexa AI - Enterprise Knowledge Platform
 
 ## One-liner
 "Intellexa AI helps answer questions from company or user documents using RAG technology."
+
+## 🎥 Demo Video
+[![Intellexa AI Demo](https://img.shields.io/badge/Watch-Demo-red?style=for-the-badge&logo=youtube)](https://youtu.be/sGkb72YV9DE?si=hgmPCSYQzq_HD2fa)
 
 ## Overview
 Intellexa AI is a Retrieval-Augmented Generation (RAG) based system that allows users to ask questions directly from PDF documents.  
@@ -115,4 +118,5 @@ Conclusion: Enterprises can save significant time and improve decision-making by
 
 ## Author
 **Subham Maharana**
+
 A fresher exploring AI, LangChain, and RAG systems. Built this project as part of learning enterprise AI applications and creating practical solutions for real-world document search challenges.
