@@ -104,7 +104,7 @@ def qa_chain(query, context):
 
 if __name__ == "__main__":
     # Load documents 
-    documents = pdf_loader(r"src\Insurance_Policy.pdf")
+    documents = pdf_loader(r"Example\Insurance_Policy.pdf")
     if not documents:
         print("Failed to load documents. Exiting.")
         exit()

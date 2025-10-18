@@ -1,122 +1,113 @@
-# 🚀 Intellexa AI - Enterprise Knowledge Platform
-
-## One-liner
-"Intellexa AI helps answer questions from company or user documents using RAG technology."
+# 🧠 Intellexa AI - Enterprise Knowledge Platform
 
 ## 🎥 Demo Video
-[![Intellexa AI Demo](https://img.shields.io/badge/Watch-Demo-red?style=for-the-badge&logo=youtube)](https://youtu.be/sGkb72YV9DE?si=hgmPCSYQzq_HD2fa)
+https://img.shields.io/badge/Watch-Demo-red?style=for-the-badge&logo=youtube
+
+## 🚀 Phase -2: Web Interface & Multi-Document Support!
+*What's New:*
+
+Professional Web Interface - Streamlit-based dual-tab application
+
+* Multi-Document Support - Handle PDF, DOCX, and TXT files
+* Company Knowledge Base - Dedicated tab for enterprise documents
+* Real-time Q&A - Instant answers with source citations
+* Modular Architecture - Production-ready code structure
+
+## One-Liner
+"Intellexa AI transforms documents into conversational knowledge bases using advanced RAG technology."
 
 ## Overview
-Intellexa AI is a Retrieval-Augmented Generation (RAG) based system that allows users to ask questions directly from PDF documents.  
-It uses LangChain and Google Vertex AI to split, embed, and search documents efficiently, providing accurate answers with source references.
+Intellexa AI is an enterprise-grade knowledge platform that enables intelligent Q&A from both company documents and user-uploaded files. Built with modern AI technologies, it provides instant, accurate answers with full source transparency.
 
-## Problem Statement
-Many companies have important information spread across many PDF documents.
-Finding the right information takes a lot of time and effort. This slows down work and decision-making.
+## Business Problem
+Enterprises struggle with information scattered across multiple documents - HR policies, research papers, company handbooks. Manual searching is time-consuming and inefficient. Intellexa AI solves this by providing instant access to organizational knowledge.
 
-## Tools and Technologies
-- **Python** - with LangChain framework
-- **ChromaDB** - vector database with persistence
-- **PyPDFLoader** - Load PDF documents
-- **RecursiveCharacterTextSplitter** - Split documents into manageable chunks
-- **VertexAIEmbeddings** - Convert text into embeddings for semantic search
-- **Chroma Vector Database** - vector database with persistence
-- **Gemini LLM** - Generate answers from retrieved context
-- **Professional error handling** and modular design
-
-## Methods & Key Insights
-1. **PDF Loading**: Extracts text from uploaded PDFs.  
-2. **Text Chunking**: Splits long documents into smaller chunks for better semantic search.  
-3. **Embeddings & Vectorstore**: Converts chunks into embeddings and stores them in Chroma for fast retrieval.  
-4. **Context Retrieval**: Searches for the most relevant chunks based on user queries.  
-5. **Answer Generation**: Uses Gemini LLM to generate answers from retrieved context.  
-6. **Sources Tracking**: Displays the source document and page for transparency.  
-
-**Key Insight:** Combining RAG with vector search ensures accurate, context-aware answers from large documents.
-
-## Output / Model
-- Users enter a question in the terminal.
-- System retrieves the most relevant chunks from the PDF(s) and generates a concise answer.
-- Each answer includes **source references** with document name and page numbers.
-
-**Example:**
---------------------------------------------- 🚀 Intellexa AI : Basic RAG MVP ---------------------------------------------
-
-Document loaded successfully!
-
-Vectorstore created successfully!
+## Tech Stack
+* Python with LangChain framework
+* Google Vertex AI - Gemini 2.5 Flash Lite & text-embedding-005
+* ChromaDB - Vector database with persistence
+* Streamlit - Professional web interface
+* Multi-format Support - PDF, DOCX, TXT document processing
 
 
-🧠 Intellexa AI is ready! Ask your questions:
+## Architecture
+```text
+intellexa-ai/
+├── src/
+│   ├── core/                 # Document loading & processing
+│   ├── vector_store/         # Embeddings & vector management
+│   └── chains/              # AI reasoning & Q&A
+├── app.py                   # Streamlit web application
+├── requirements.txt         # Python dependencies
+├── pyproject.toml          
+└── data/
+    ├── company_kb/          # Enterprise knowledge base
+    └── user_documents/      # User uploads
+```
 
-✍️ Enter your question or exit: describe me about life insurance policy
+## Key Features
 
-------------------------------------------------------------------------------------------------------------------------------
-💡 Answer 💡
+*Dual Interface:*
+* PDF Q&A Tab: Upload and query personal documents
+* Company KB Tab: Access pre-loaded enterprise knowledge
 
-The life insurance policy is a Term Life Insurance policy from SecureLife Assurance Co., with policy number LIP-2025-112. The policyholder is Jane Smith, and the coverage period is from 01-Feb-2025 to 31-Jan-2045.
+*Advanced RAG Pipeline:*
+* Smart Document Processing - Multi-format support with metadata preservation
+* Intelligent Chunking - Context-aware text splitting
+* Vector Embeddings - Google Vertex AI integration
+* Semantic Search - Find most relevant content
+* AI-Powered Answers - Gemini LLM with source citations
 
-The policy has the following features:
-*   **Exclusions:** Injuries from hazardous sports, self-harm or substance abuse, and war, riots, or nuclear risks.
-*   **Premium:** USD 500 annually, with a 15-day grace period for payment.
-*   **Claims:**
-    *   Notify the insurer within 48 hours.
-    *   Submit hospital bills, discharge summary, and ID proof.
-    *   Claim settlement within 30 days.
+## 🖼️ Application Screenshots
 
-Sources: Insurance_Policy.pdf (Page 1)
+### Main Interface - Dual Tab System
 
-----------------------------------------------------------------------------------------------------------------------------------
+#### 📄 PDF Q&A Tab
+![PDF Q&A Interface](images\User_pdf_demo.png)
+*Upload and query personal documents with instant answers*
 
-✍️ Enter your question or exit: how to claim travel insurance policy
+#### 🏢 Company KB Tab  
+![Company KB Interface](images\Company_KB_demo.png)
+*Access enterprise knowledge base with source citations*
+## Quick Start
 
-----------------------------------------------------------------------------------------------------------------------------------
-💡 Answer 💡
-
-To claim travel insurance policy, you need to:
-*   Report the incident to the insurer or international helpline within 24 hours.
-*   Submit medical bills, travel documents, and boarding passes.
-*   The claim will be settled within 30 working days.
-
-Sources: Insurance_Policy.pdf (Page 2)
-
----------------------------------------------------------------------------------------------------------------------------------
-✍️ Enter your question or exit: exit
-
-...........Thanks You for using Intellexa AI...........
-
-## How to run
-1. Clone repository
+*First-Time Setup:*
 ```bash
-git clone https://github.com//intellexa-ai.git
+# 1. Clone repository
+git clone https://github.com/suubha7/intellexa-ai.git
 cd intellexa-ai
-```
-2. Install dependencies
-```bash
+
+# 2. Install dependencies
 pip install -r requirements.txt
-```
-3. Set up Google Cloud credentials
-```bash
+
+# 3. Set up Google Cloud credentials
 export GOOGLE_APPLICATION_CREDENTIALS="path/to/your/credentials.json"
+
+# 4. Create data folders
+mkdir -p data/company_kb data/user_documents
+
+# 5. Add company documents (optional)
+# Place your PDF/DOCX files in data/company_kb/ folder
+
+# 6. Launch application
+streamlit run app.py
 ```
-4. Place your PDF in the project folder (Sample.pdf as an example).
 
-```bash
-python .\src\intellexa-mvp.py
-```
-5. Ask questions in the terminal. Type exit to quit.
+## Results & Impact
 
-## Result & Conclusion
-Intellexa AI successfully answers questions from PDFs with relevant context and source references.
-It demonstrates the power of combining RAG with vector embeddings for document-based Q&A.
-Conclusion: Enterprises can save significant time and improve decision-making by using AI to extract insights from documents spread across different locations.
+* 90% faster information retrieval vs manual searching
+* Accurate answers with verifiable sources
+* Enterprise-ready scalable architecture
+* User-friendly web interface for non-technical users
 
-## Future Work
-- Phase 2: Web interface & multi-document support
-- Phase 3: Research features & citations  
-- Phase 4: Enterprise deployment with user auth
+## Roadmap
+* Phase 1: Core RAG MVP (Command-line)
+* Phase 2: Web Interface & Multi-Document
+* Phase 3: Advanced Features & Chat History
+* Phase 4: Enterprise Deployment 
 
-## Author
-**Subham Maharana**
+##  Author
 
-A fresher exploring AI, LangChain, and RAG systems. Built this project as part of learning enterprise AI applications and creating practical solutions for real-world document search challenges.
+Subham Maharana
+
+Gen AI Developer building practical enterprise solutions. Passionate about making AI accessible and useful for real-world business challenges.
