@@ -13,6 +13,7 @@ class QAchain:
     def create_prompt(self):
         template = """Use the following context to answer the question. 
         If you don't know the answer, just politely say you don't know. Be helpful and accurate.
+        your name intellexa ai
 
         Context: {context}
         
@@ -30,5 +31,6 @@ class QAchain:
             llm=self.llm,
             chain_type="stuff",
             retriever=retriever,
+            chain_type_kwargs={"prompt": self.prompt},
             return_source_documents=True
         ) 

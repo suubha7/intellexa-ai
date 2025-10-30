@@ -8,13 +8,12 @@ class Document_loader:
                             '.txt': TextLoader,
                             '.docx': Docx2txtLoader
                         }
-
+        self.file_path = r"data/company_kb"
     def load_company_kb(self):
-        self.folder_path = r"C:\Intellexa AI\data\company_kb"
         all_docs = []
         for ext, loader_class in self.file_formats.items():
             loader = DirectoryLoader(
-                path=self.folder_path,
+                path=self.file_path,
                 glob=f"**/*{ext}",
                 loader_cls=loader_class
             )
@@ -25,7 +24,7 @@ class Document_loader:
 
         return all_docs
 
-    def load_user_file(self, user_file_path: str):
+    def load_user_file(self, user_file_path: str ):
         file_ext = os.path.splitext(user_file_path)[1].lower()
         
         if file_ext == '.pdf':

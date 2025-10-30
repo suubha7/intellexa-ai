@@ -1,36 +1,31 @@
 # 🧠 Intellexa AI - Enterprise Knowledge Platform
 
-## 🎥 Demo Video
-https://img.shields.io/badge/Watch-Demo-red?style=for-the-badge&logo=youtube
+## 🚀 Phase 3 Complete - Advanced Features & Chat History!
 
-## 🚀 Phase -2: Web Interface & Multi-Document Support!
-*What's New:*
+### What's New:
+- **3-Tab Professional Interface** - PDF Q&A, Company KB, and Document Summarizer
+- **Smart Chat History** - Separate conversation memory for each tab
+- **Document Summarization** - Instant bullet-point summaries for any document
+- **Enhanced User Experience** - Auto-cleanup, better error handling
 
-Professional Web Interface - Streamlit-based dual-tab application
-
-* Multi-Document Support - Handle PDF, DOCX, and TXT files
-* Company Knowledge Base - Dedicated tab for enterprise documents
-* Real-time Q&A - Instant answers with source citations
-* Modular Architecture - Production-ready code structure
-
-## One-Liner
+### One-Liner
 "Intellexa AI transforms documents into conversational knowledge bases using advanced RAG technology."
 
-## Overview
-Intellexa AI is an enterprise-grade knowledge platform that enables intelligent Q&A from both company documents and user-uploaded files. Built with modern AI technologies, it provides instant, accurate answers with full source transparency.
+### Overview
+Intellexa AI is an enterprise-grade knowledge platform that enables intelligent Q&A, summarization, and document analysis. Built with modern AI technologies, it provides instant, accurate answers with full source transparency.
 
-## Business Problem
+### Business Problem
 Enterprises struggle with information scattered across multiple documents - HR policies, research papers, company handbooks. Manual searching is time-consuming and inefficient. Intellexa AI solves this by providing instant access to organizational knowledge.
 
-## Tech Stack
+### Tech Stack
 * Python with LangChain framework
 * Google Vertex AI - Gemini 2.5 Flash Lite & text-embedding-005
-* ChromaDB - Vector database with persistence
+* ChromaDB & FAISS - Hybrid vector database strategy
 * Streamlit - Professional web interface
 * Multi-format Support - PDF, DOCX, TXT document processing
 
 
-## Architecture
+### Architecture
 ```text
 intellexa-ai/
 ├── src/
@@ -38,38 +33,47 @@ intellexa-ai/
 │   ├── vector_store/         # Embeddings & vector management
 │   └── chains/              # AI reasoning & Q&A
 ├── app.py                   # Streamlit web application
-├── requirements.txt         # Python dependencies
-├── pyproject.toml          
+├── requirements.txt         # Python dependencies    
 └── data/
     ├── company_kb/          # Enterprise knowledge base
     └── user_documents/      # User uploads
 ```
 
-## Key Features
+### **Hybrid Database Strategy:**
+- **Company KB**: ChromaDB with persistence - rarely changes, always available
+- **User Uploads**: FAISS in-memory - auto-clears on restart, no stale data
+- **Data Privacy**: User documents never persist, company data always secure
 
-*Dual Interface:*
-* PDF Q&A Tab: Upload and query personal documents
-* Company KB Tab: Access pre-loaded enterprise knowledge
+### Key Features
 
-*Advanced RAG Pipeline:*
-* Smart Document Processing - Multi-format support with metadata preservation
-* Intelligent Chunking - Context-aware text splitting
-* Vector Embeddings - Google Vertex AI integration
-* Semantic Search - Find most relevant content
-* AI-Powered Answers - Gemini LLM with source citations
+#### Three Powerful Interfaces:
+- **PDF Q&A Tab**: Upload and query personal documents with FAISS in-memory storage
+- **Company KB Tab**: Access pre-loaded enterprise knowledge with ChromaDB persistence
+- **Summarizer Tab**: Get instant document summaries and text analysis
 
-## 🖼️ Application Screenshots
+#### Advanced RAG Pipeline:
+1. **Smart Document Processing** - Multi-format support with metadata preservation
+2. **Intelligent Chunking** - Context-aware text splitting
+3. **Vector Embeddings** - Google Vertex AI integration
+4. **Semantic Search** - Hybrid FAISS/ChromaDB retrieval
+5. **AI-Powered Answers** - Gemini LLM with source citations
+6. **Chat Memory** - Separate conversation history for each feature
 
-### Main Interface - Dual Tab System
+### Main Interface - Three Tab System
 
-#### 📄 PDF Q&A Tab
-![PDF Q&A Interface](images\User_pdf_demo.png)
-*Upload and query personal documents with instant answers*
+#### PDF Q&A Tab
+![PDF Q&A Interface](images\PDF_QA.png)
+*Upload and query personal documents with FAISS in-memory storage*
 
-#### 🏢 Company KB Tab  
-![Company KB Interface](images\Company_KB_demo.png)
-*Access enterprise knowledge base with source citations*
-## Quick Start
+#### Company KB Tab
+![Company KB Interface](images\Company_kb.png)
+*Access enterprise knowledge base with ChromaDB persistence*
+
+#### Summarizer Tab
+![Summarizer Interface](images\Summarizer tab.png)
+*Get instant document summaries and analyze text content*
+
+### Quick Start
 
 *First-Time Setup:*
 ```bash
@@ -93,21 +97,28 @@ mkdir -p data/company_kb data/user_documents
 streamlit run app.py
 ```
 
-## Results & Impact
+### Access Interfaces:
+* PDF Q&A Tab: Upload documents with FAISS in-memory processing
+* Company KB Tab: Query enterprise knowledge with ChromaDB persistence
+* Summarizer Tab: Upload files or paste text for instant summaries
+
+### Results & Impact
 
 * 90% faster information retrieval vs manual searching
 * Accurate answers with verifiable sources
+* Smart data management - FAISS for users, ChromaDB for company
 * Enterprise-ready scalable architecture
 * User-friendly web interface for non-technical users
+* Auto-cleanup - No stale user data accumulation
 
-## Roadmap
+### Roadmap
 * Phase 1: Core RAG MVP (Command-line)
 * Phase 2: Web Interface & Multi-Document
 * Phase 3: Advanced Features & Chat History
 * Phase 4: Enterprise Deployment 
 
-##  Author
+###  Author
 
-Subham Maharana
+**Subham Maharana**
 
 Gen AI Developer building practical enterprise solutions. Passionate about making AI accessible and useful for real-world business challenges.
