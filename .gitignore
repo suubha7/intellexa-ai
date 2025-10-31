@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-.env
 .python-version
 *.ipynb
 
@@ -63,3 +62,7 @@ test3.py
 test2.py
 *.json
 gcloud.json
+
+Example/
+pyproject.toml
+images/
