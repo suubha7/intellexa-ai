@@ -106,10 +106,10 @@ To deploy this app on Hugging Face:
 1. Create a new Space → Select **Streamlit** SDK
 2. Upload your project files (`app.py`, `requirements.txt`, `README.md`, `src/`)
 3. Add your Google Cloud credentials in **Settings → Secrets**
-4. Set environment variable in `chain.py`:
+4. Set environment variable in `config.py`:
 ```python
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "gcloud_service_account.json"
-
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "gcloud.json"
+```
 
 ### Access Interfaces:
 * PDF Q&A Tab: Upload documents with FAISS in-memory processing
