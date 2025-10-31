@@ -28,15 +28,17 @@ Enterprises struggle with information scattered across multiple documents - HR p
 ### Architecture
 ```text
 intellexa-ai/
+├── app.py
+├── requirements.txt
+├── README.md
 ├── src/
-│   ├── core/                 # Document loading & processing
-│   ├── vector_store/         # Embeddings & vector management
-│   └── chains/              # AI reasoning & Q&A
-├── app.py                   # Streamlit web application
-├── requirements.txt         # Python dependencies    
+│   ├── config.py
+│   ├── chains/
+│   ├── vector_store/
+│   └── core/
 └── data/
-    ├── company_kb/          # Enterprise knowledge base
-    └── user_documents/      # User uploads
+    ├── company_kb/
+    └── user_documents/
 ```
 
 ### **Hybrid Database Strategy:**
@@ -62,15 +64,15 @@ intellexa-ai/
 ### Main Interface - Three Tab System
 
 #### PDF Q&A Tab
-![PDF Q&A Interface](images\PDF_QA.png)
+![PDF Q&A Interface](images/PDF_QA.png)
 *Upload and query personal documents with FAISS in-memory storage*
 
 #### Company KB Tab
-![Company KB Interface](images\Company_kb.png)
+![Company KB Interface](images/Company_kb.png)
 *Access enterprise knowledge base with ChromaDB persistence*
 
 #### Summarizer Tab
-![Summarizer Interface](images\Summarizer tab.png)
+![Summarizer Interface](images/Summarizer_tab.png)
 *Get instant document summaries and analyze text content*
 
 ### Quick Start
@@ -96,6 +98,18 @@ mkdir -p data/company_kb data/user_documents
 # 6. Launch application
 streamlit run app.py
 ```
+
+### Deploy on Hugging Face Spaces
+
+To deploy this app on Hugging Face:
+
+1. Create a new Space → Select **Streamlit** SDK
+2. Upload your project files (`app.py`, `requirements.txt`, `README.md`, `src/`)
+3. Add your Google Cloud credentials in **Settings → Secrets**
+4. Set environment variable in `chain.py`:
+```python
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "gcloud_service_account.json"
+
 
 ### Access Interfaces:
 * PDF Q&A Tab: Upload documents with FAISS in-memory processing

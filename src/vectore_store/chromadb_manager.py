@@ -1,3 +1,4 @@
+from src import config
 from langchain_google_vertexai.embeddings import VertexAIEmbeddings
 from langchain_community.vectorstores import FAISS, Chroma
 

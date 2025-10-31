@@ -1,3 +1,4 @@
+from src import config
 from langchain.prompts import PromptTemplate
 from langchain.chat_models import init_chat_model
 from langchain.chains import RetrievalQA

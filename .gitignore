@@ -61,3 +61,5 @@ build/
 test.py
 test3.py
 test2.py
+*.json
+gcloud.json
