@@ -1,9 +1,9 @@
-from src.utils import get_embadding_model
+from src.utils import get_embedding_model
 from langchain_community.vectorstores import FAISS, Chroma
 
 class Vector_manager:
     def __init__(self):
-        self.embedding = get_embadding_model()
+        self.embedding = get_embedding_model()
 
     # FAISS for user-uploaded files (in-memory)
     def create_faiss_vector_store(self, chunks):
