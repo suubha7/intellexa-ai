@@ -1,10 +1,9 @@
-from src import config
-from langchain_google_vertexai.embeddings import VertexAIEmbeddings
+from src.utils import get_embadding_model
 from langchain_community.vectorstores import FAISS, Chroma
 
 class Vector_manager:
     def __init__(self):
-        self.embedding = VertexAIEmbeddings(model_name="text-embedding-005")
+        self.embedding = get_embadding_model()
 
     # FAISS for user-uploaded files (in-memory)
     def create_faiss_vector_store(self, chunks):

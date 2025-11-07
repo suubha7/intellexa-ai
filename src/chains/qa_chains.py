@@ -1,14 +1,10 @@
-from src import config
+from src.utils import get_llm
 from langchain.prompts import PromptTemplate
-from langchain.chat_models import init_chat_model
 from langchain.chains import RetrievalQA
 
 class QAchain:
     def __init__(self):
-        self.llm = init_chat_model(
-            model="gemini-2.5-flash-lite", 
-            model_provider="google_vertexai"
-            )
+        self.llm = get_llm()
         self.prompt = self.create_prompt()
 
     def create_prompt(self):

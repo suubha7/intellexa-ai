@@ -18,7 +18,8 @@ chroma_db/
 company_chroma_db/
 user_chroma_db/
 test_chroma_db_kb/
-temp/
+temp_files/
+
 
 # Package management
 uv.lock
@@ -65,4 +66,3 @@ gcloud.json
 
 Example/
 pyproject.toml
-images/

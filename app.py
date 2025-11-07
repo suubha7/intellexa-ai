@@ -1,6 +1,6 @@
 from src.core.document_loader import Document_loader
 from src.core.text_splitter import TextSplitter
-from src.vectore_store.chromadb_manager import Vector_manager
+from src.vectore_store.vectore_manager import Vector_manager
 from src.chains.qa_chains import QAchain
 from src.chains.summarizer import Summarizer
 import streamlit as st
@@ -174,6 +174,10 @@ if selected_tab == "PDF Q&A":
             st.sidebar.write("---")
     else:
         st.sidebar.info("No chat history yet")
+    # Footer
+    st.sidebar.markdown("### 💡 Tips:")
+    st.sidebar.markdown("- Upload files under 50MB for best performance")
+    st.sidebar.markdown("- Use PDF Q&A for document-specific questions")
 
 elif selected_tab == "Company Knowledge Base":
     st.sidebar.subheader("Company KB History")
@@ -185,6 +189,14 @@ elif selected_tab == "Company Knowledge Base":
     else:
         st.sidebar.info("No chat history yet")
 
+    st.sidebar.markdown("### 💡 Tips:")
+    st.sidebar.markdown("- Company KB contains pre-loaded knowledge")
+
 elif selected_tab == "Summarizer":
     st.sidebar.subheader("Summarizer")
     st.sidebar.info("Upload your documents[pdf, txt, docx] and get summarized response")
+    
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("### 💡 Tips:")
+    st.sidebar.markdown("- Upload files under 50MB for best performance")
+    st.sidebar.markdown("- Summarizer works best with well-structured documents")
