@@ -3,6 +3,7 @@ from src.core.text_splitter import TextSplitter
 from src.vectore_store.vectore_manager import Vector_manager
 from src.chains.qa_chains import QAchain
 from src.chains.summarizer import Summarizer
+from langchain.docstore.document import Document
 import streamlit as st
 import hashlib
 import os
@@ -140,11 +141,34 @@ elif selected_tab == "Company Knowledge Base":
 
 # Summarizer TAB
 elif selected_tab == "Summarizer":
-    st.subheader('Summarize It Fast')
+    st.subheader("🧠 Summarize It Fast")
 
-    uploaded_file = st.file_uploader("Upload your PDF and start asking questions about it.", type=['pdf', 'txt', 'docx'], key="summarize")
-    if uploaded_file:
-        with st.spinner("File Summarizing .........."):
+    col1, col2 = st.columns([1, 2])
+
+    with col1:
+        uploaded_file = st.file_uploader(
+            "Upload your document to summarize",
+            type=["pdf", "txt", "docx"],
+            key="summarize",
+            label_visibility="collapsed"
+        )
+        file_button = st.button("Summarize File", key="file_button")
+
+    with col2:
+        text_input = st.text_area(
+            "Input",
+            label_visibility="collapsed",
+            placeholder="Enter your text here...",
+            height=132
+        )
+        text_button = st.button("Summarize Text", key="text_button")
+
+    # Initialize result variable
+    summarized_response = ""
+
+    # --- FILE SUMMARIZATION ---
+    if file_button and uploaded_file:
+        with st.spinner("📄 Summarizing file... please wait..."):
             os.makedirs("temp_files", exist_ok=True)
             file_extension = os.path.splitext(uploaded_file.name)[1]
             file_path = f"temp_files/current_user_file{file_extension}"
@@ -155,14 +179,27 @@ elif selected_tab == "Summarizer":
             st.session_state.original_filename = uploaded_file.name
             file_hash = get_file_hash(file_path)
 
-            summarized_response = ""
             if st.session_state.get("last_summarizer_hash") != file_hash:
                 chunks = get_processed_document(file_path)
 
                 summarizer = Summarizer()
                 summarized_response = summarizer.summarize(chunks)
                 st.session_state.last_summarizer_hash = file_hash
-            st.text_area("Answer:", value=summarized_response, height=300, disabled=True)
+            else:
+                summarized_response = "File already summarized previously."
+
+    # --- TEXT SUMMARIZATION ---
+    elif text_button and text_input.strip():
+        with st.spinner("🧠 Summarizing text... please wait..."):
+            docs = [Document(page_content=text_input)]
+            summarizer = Summarizer()
+            summarized_response = summarizer.summarize(docs)
+
+    elif text_button and not text_input.strip():
+        st.warning("⚠️ Please enter some text to summarize.")
+
+    # --- OUTPUT AREA ---
+    st.text_area("Summary:", value=summarized_response, height=200, disabled=True)
 
 # Sidebar Chat History
 if selected_tab == "PDF Q&A":

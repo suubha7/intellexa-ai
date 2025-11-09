@@ -51,7 +51,7 @@ intellexa-ai/
 #### Three Powerful Interfaces:
 - **PDF Q&A Tab**: Upload and query personal documents with FAISS in-memory storage
 - **Company KB Tab**: Access pre-loaded enterprise knowledge with ChromaDB persistence
-- **Summarizer Tab**: Get instant document summaries and text analysis
+- **Summarizer Tab**: Upload a File or Paste Text and Get instant summaries
 
 #### Advanced RAG Pipeline:
 1. **Smart Document Processing** - Multi-format support with metadata preservation
@@ -87,7 +87,7 @@ cd intellexa-ai
 pip install -r requirements.txt
 
 # 3. Set up Google Cloud credentials
-export GOOGLE_APPLICATION_CREDENTIALS="path/to/your/credentials.json"
+export GOOGLE_APPLICATION_CREDENTIALS="credentials.json"
 
 # 4. Create data folders
 mkdir -p data/company_kb data/user_documents
