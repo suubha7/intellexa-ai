@@ -213,7 +213,7 @@ if selected_tab == "PDF Q&A":
         st.sidebar.info("No chat history yet")
     # Footer
     st.sidebar.markdown("### 💡 Tips:")
-    st.sidebar.markdown("- Upload files under 50MB for best performance")
+    st.sidebar.markdown("- Upload files under 10MB for best performance")
     st.sidebar.markdown("- Use PDF Q&A for document-specific questions")
 
 elif selected_tab == "Company Knowledge Base":
@@ -235,5 +235,5 @@ elif selected_tab == "Summarizer":
     
     st.sidebar.markdown("---")
     st.sidebar.markdown("### 💡 Tips:")
-    st.sidebar.markdown("- Upload files under 50MB for best performance")
+    st.sidebar.markdown("- Upload files under 10MB for best performance")
     st.sidebar.markdown("- Summarizer works best with well-structured documents")

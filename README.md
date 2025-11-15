@@ -1,5 +1,10 @@
 # 🧠 Intellexa AI - Enterprise Knowledge Platform
 
+## 🎥 Demo Video
+[![Intellexa AI Demo](https://img.shields.io/badge/Watch_Demo-FF0000?style=for-the-badge&logo=youtube)](https://youtu.be/QMDpWEcsHKg?si=eUmPloTShUwWgy-w)
+
+*Click the badge above to watch the full demo!*
+
 ## 🚀 Phase 3 Complete - Advanced Features & Chat History!
 
 ### What's New:
@@ -32,7 +37,7 @@ intellexa-ai/
 ├── requirements.txt
 ├── README.md
 ├── src/
-│   ├── config.py
+│   ├── utils.py
 │   ├── chains/
 │   ├── vector_store/
 │   └── core/
@@ -106,7 +111,7 @@ To deploy this app on Hugging Face:
 1. Create a new Space → Select **Streamlit** SDK
 2. Upload your project files (`app.py`, `requirements.txt`, `README.md`, `src/`)
 3. Add your Google Cloud credentials in **Settings → Secrets**
-4. Set environment variable in `config.py`:
+4. Set environment variable in `.env`:
 ```python
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "gcloud.json"
 ```
